@@ -1,0 +1,116 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@plugin "@tailwindcss/typography";
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-card-border: var(--card-border);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover-border: var(--popover-border);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --font-sans: 'Space Grotesk', 'Inter', sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: #0F121B;
+  --foreground: #FFFFFF;
+  --border: #2F3648;
+  --input: #2F3648;
+  --ring: #2E7BFF;
+
+  --card: #242A3A;
+  --card-foreground: #FFFFFF;
+  --card-border: #2F3648;
+
+  --popover: #242A3A;
+  --popover-foreground: #FFFFFF;
+  --popover-border: #2F3648;
+
+  --primary: #2E7BFF;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #181D2A;
+  --secondary-foreground: #FFFFFF;
+
+  --muted: #181D2A;
+  --muted-foreground: #9CA3AF;
+
+  --accent: #5EA3FF;
+  --accent-foreground: #FFFFFF;
+
+  --destructive: #E53935;
+  --destructive-foreground: #FFFFFF;
+
+  --radius: 1rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground;
+    font-family: var(--font-sans);
+  }
+
+  /* Swiper custom styles */
+  .swiper-pagination-bullet {
+    @apply bg-muted-foreground opacity-50;
+  }
+  .swiper-pagination-bullet-active {
+    @apply bg-primary opacity-100;
+  }
+  .swiper-button-next, .swiper-button-prev {
+    @apply text-primary bg-background/80 backdrop-blur-md w-10 h-10 rounded-full flex items-center justify-center border border-white/10;
+  }
+  .swiper-button-next:after, .swiper-button-prev:after {
+    @apply text-sm font-bold;
+  }
+}
+
+.glass-card {
+  @apply bg-[#242A3A]/80 backdrop-blur-xl border border-white/5 shadow-xl;
+}
+
+.glow-yellow {
+  box-shadow: 0 0 40px -10px rgba(46, 123, 255, 0.35);
+}
+
+.glow-yellow-hover:hover {
+  box-shadow: 0 10px 40px -10px rgba(46, 123, 255, 0.45);
+}
