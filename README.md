@@ -4,6 +4,8 @@ A product browsing app built with **React** and **TypeScript** on the public [Du
 
 **Repository:** https://github.com/AnasGhnaim/Cubo-frontend-test
 
+**Deployed app:** https://cubo-frontend-test.vercel.app/
+
 ---
 
 ## Contents
